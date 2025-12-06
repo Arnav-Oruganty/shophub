@@ -1,7 +1,9 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { calculateTotal as calcUtil } from "../utils/calculateTotal";
 
-const ShopContext = createContext();
+// FIX ✔
+export const ShopContext = createContext();
+
 export const useShop = () => useContext(ShopContext);
 
 export function ShopProvider({ children }) {
@@ -17,7 +19,6 @@ export function ShopProvider({ children }) {
   const [cart, setCart] = useState([]);
   const [orders, setOrders] = useState([]);
 
-  // Fetch products on load
   useEffect(() => {
     fetch("http://localhost:3000/products")
       .then((r) => r.json())
@@ -153,25 +154,29 @@ export function ShopProvider({ children }) {
     ? orders.filter((o) => o.userId === currentUser.username)
     : [];
 
-  const value = {
-    currentPage,
-    setCurrentPage,
-    users,
-    currentUser,
-    isAuthenticated,
-    products,
-    cart,
-    orders,
-    userOrders,
-    addToCart,
-    removeFromCart,
-    updateCartQuantity,
-    calculateTotal,
-    handleLogin,
-    handleRegister,
-    handleLogout,
-    placeOrder,
-  };
-
-  return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;
+  return (
+    <ShopContext.Provider
+      value={{
+        currentPage,
+        setCurrentPage,
+        users,
+        currentUser,
+        isAuthenticated,
+        products,
+        cart,
+        orders,
+        userOrders,
+        addToCart,
+        removeFromCart,
+        updateCartQuantity,
+        calculateTotal,
+        handleLogin,
+        handleRegister,
+        handleLogout,
+        placeOrder,
+      }}
+    >
+      {children}
+    </ShopContext.Provider>
+  );
 }

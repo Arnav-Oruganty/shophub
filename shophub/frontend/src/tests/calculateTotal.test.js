@@ -1,16 +1,17 @@
-import { describe, it, expect } from "vitest";
-import { calculateTotal } from "../utils/calculateTotal";
+import { describe, test, expect } from "vitest";
+import calculateTotal from "../utils/calculateTotal";
 
-describe("calculateTotal", () => {
-  it("returns 0 for empty cart", () => {
+describe("calculateTotal utility", () => {
+  test("returns 0 for an empty cart", () => {
     expect(calculateTotal([])).toBe(0);
   });
 
-  it("sums items correctly", () => {
+  test("calculates total correctly", () => {
     const cart = [
-      { price: 100, quantity: 2 },
-      { price: 50, quantity: 1 },
+      { price: 10, quantity: 2 },
+      { price: 5, quantity: 1 },
+      { price: 3, quantity: 3 },
     ];
-    expect(calculateTotal(cart)).toBe(250);
+    expect(calculateTotal(cart)).toBe(34);
   });
 });
