@@ -1,0 +1,105 @@
+:root {
+  --primary: #0d9488; /* teal-600 */
+  --primary-light: #14b8a6;
+  --primary-bg: #f8fafc; /* very light gray */
+  --text-dark: #0f172a; /* slate-900 */
+  --text-light: #64748b; /* slate-500 */
+  --radius: 12px;
+  --shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0px 6px 18px rgba(0, 0, 0, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: white; /* PURE WHITE THEME */
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: var(--text-dark);
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+/* General cards */
+.card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* Input fields */
+.input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius);
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.25);
+}
+
+/* Primary Button */
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  color: white;
+  border-radius: var(--radius);
+  font-size: 16px;
+  transition: 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--primary-light);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  padding: 10px 14px;
+  background: #e2e8f0;
+  border-radius: var(--radius);
+  color: var(--text-dark);
+  transition: 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: #cbd5e1;
+}
+
+/* Navbar */
+.navbar {
+  background: white;
+  box-shadow: var(--shadow);
+  padding: 16px 0;
+}
+
+.nav-item {
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  transition: 0.2s ease;
+}
+
+.nav-item:hover {
+  background: var(--primary-bg);
+}
