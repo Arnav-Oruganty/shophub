@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 
 import React, { useState } from "react";
 import { CreditCard } from "lucide-react";
 import { useShop } from "../context/ShopContext";
 import { CardPayment, UpiPayment, CashOnDelivery } from "../patterns/paymentStrategies";
+=======
+import React, { useState } from "react";
+import { CreditCard } from "lucide-react";
+import { useShop } from "../context/ShopContext";
+>>>>>>> ec696a6c767045ab64e81093db464f61a66388a5
 
 export default function CheckoutPage() {
   const { calculateTotal, placeOrder } = useShop();
@@ -15,6 +21,7 @@ export default function CheckoutPage() {
     pincode: "",
   });
 
+<<<<<<< HEAD
   // Payment strategy pattern
   const paymentOptions = [
     { label: "Card", value: "card", strategy: new CardPayment() },
@@ -48,6 +55,10 @@ export default function CheckoutPage() {
     placeOrder(address);
   };
 
+=======
+  const update = (field, value) => setAddress({ ...address, [field]: value });
+
+>>>>>>> ec696a6c767045ab64e81093db464f61a66388a5
   return (
     <div className="container" style={{ maxWidth: "600px" }}>
       <h2 style={{ fontSize: "28px", fontWeight: "700", marginBottom: "20px" }}>Checkout</h2>
@@ -83,6 +94,7 @@ export default function CheckoutPage() {
           onChange={(e) => update("pincode", e.target.value)}
         />
 
+<<<<<<< HEAD
         {/* Payment method selection UI */}
         <div style={{ margin: "20px 0" }}>
           <label style={{ fontWeight: 600 }}>Payment Method:</label>
@@ -149,12 +161,18 @@ export default function CheckoutPage() {
           </div>
         )}
 
+=======
+>>>>>>> ec696a6c767045ab64e81093db464f61a66388a5
         <div style={{ marginTop: "20px", display: "flex", justifyContent: "space-between", fontWeight: "700" }}>
           <span>Total</span>
           <span style={{ color: "#0d9488" }}>${total}</span>
         </div>
 
+<<<<<<< HEAD
         <button className="btn-primary" style={{ marginTop: "20px" }} onClick={handleCheckout}>
+=======
+        <button className="btn-primary" style={{ marginTop: "20px" }} onClick={() => placeOrder(address)}>
+>>>>>>> ec696a6c767045ab64e81093db464f61a66388a5
           <CreditCard size={18} /> Place Order
         </button>
 
