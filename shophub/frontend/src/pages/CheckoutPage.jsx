@@ -14,7 +14,6 @@ export default function CheckoutPage() {
     pincode: "",
   });
 
-  // Payment strategy pattern
   const paymentOptions = [
     { label: "Card", value: "card", strategy: new CardPayment() },
     { label: "UPI", value: "upi", strategy: new UpiPayment() },
@@ -29,20 +28,17 @@ export default function CheckoutPage() {
   const handlePaymentChange = (e) => {
     const selected = paymentOptions.find(opt => opt.value === e.target.value);
     setSelectedPayment(selected.strategy);
-    // Reset payment details when switching
     setCardDetails({ number: "", expiry: "", cvv: "" });
     setUpiPhone("");
   };
 
   const handleCheckout = () => {
-    // Collect payment details based on selected strategy
     let paymentInfo = { address, total };
     if (selectedPayment instanceof CardPayment) {
       paymentInfo = { ...paymentInfo, ...cardDetails };
     } else if (selectedPayment instanceof UpiPayment) {
       paymentInfo = { ...paymentInfo, upiPhone };
     }
-    // CashOnDelivery does not need extra info
     selectedPayment.pay(paymentInfo);
     placeOrder(address);
   };

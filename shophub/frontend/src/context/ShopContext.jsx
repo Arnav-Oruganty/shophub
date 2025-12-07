@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { calculateTotal as calcUtil } from "../utils/calculateTotal";
 
-// FIX ✔
 export const ShopContext = createContext();
 
 export const useShop = () => useContext(ShopContext);

@@ -1,7 +1,5 @@
 import { createDB } from "../db.js";
 
-// POST /cart/total
-// body: { items: [{ productId, quantity }] }
 export async function calculateCartTotal(req, res) {
   const { items } = req.body;
 

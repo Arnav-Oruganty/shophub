@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("ShopHub Backend Running 🚀");
+  res.send("ShopHub Backend Running!");
 });
 
 app.use("/products", productRoutes);

@@ -1,7 +1,5 @@
 import { createDB } from "../db.js";
 
-// POST /orders
-// body: { username, address: {street, city, state, pincode}, items: [{productId, quantity, name?, price?}] }
 export async function createOrder(req, res) {
   const { username, address, items } = req.body;
 

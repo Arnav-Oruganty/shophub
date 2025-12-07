@@ -5,11 +5,14 @@ import { ShopProvider, useShop } from '../context/ShopContext';
 describe('ShopContext', () => {
   function TestComponent() {
     const { cart, addToCart } = useShop();
+
     React.useEffect(() => {
       addToCart({ productId: 1, name: 'Test', price: 10, quantity: 1 });
-    }, [addToCart]);
+    }, []);
+
     return <div>{cart.length > 0 ? cart[0].name : 'Empty'}</div>;
   }
+
   it('provides cart and addToCart', () => {
     render(
       <ShopProvider>
