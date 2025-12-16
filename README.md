@@ -94,7 +94,8 @@ File: `frontend/src/patterns/paymentStrategies.js`
 - Allows multiple payment types (Card/UPI/COD)
 - Each payment handler follows a common interface
 - Easy to extend with new payment gateways
-
+- We also used this design pattern for rendering pages
+  
 ### 2. **Facade Pattern**
 File: `frontend/src/context/ShopContext.jsx`
 
