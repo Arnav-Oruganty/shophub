@@ -95,7 +95,7 @@ File: `frontend/src/patterns/paymentStrategies.js`
 - Each payment handler follows a common interface
 - Easy to extend with new payment gateways
 
-### 2. **Context API – Global App State**
+### 2. **Facade Pattern**
 File: `frontend/src/context/ShopContext.jsx`
 
 Manages:
@@ -208,6 +208,4 @@ Refer to them as:
 
 ---
 
-## 📄 License
-MIT License (Free to modify & use)
 
