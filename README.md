@@ -11,12 +11,12 @@ Built using **React + Vite** on the frontend and **Express + SQLite** on the bac
 ## ⭐ Features
 
 ### 👤 User
-- **Browse Products** – View items with images, pricing, and details  
-- **Shopping Cart** – Add/remove items, update quantities, auto-recalculated totals  
-- **Checkout** – Enter address and pay using Card, UPI, or Cash on Delivery  
-- **Order Placement** – Place orders and clear cart  
-- **Order History** – View previous orders  
-- **Profile Page** – View user details  
+- **Browse Products** – View items with images, pricing, and details.  
+- **Shopping Cart** – Add/remove items, update quantities, auto-recalculated totals.
+- **Checkout** – Enter address and pay using Card, UPI, or Cash on Delivery.
+- **Order Placement** – Place orders and clear cart.
+- **Order History** – View previous orders.
+- **Profile Page** – View user details.
 
 ### 🛠️ Admin (Future Scope)
 - Add/edit/delete products  
